@@ -1,0 +1,50 @@
++----------+  |  +----------+  |  +----------+
+|          |  |  |          |  |  |          |
+|  image   |  |  |  image   |  |  |  image   |
+|          |  |  |          |  |  |          |
++----------+  |  +----------+  |  +----------+
+lorem ipsum d |  lorem ipsum d |  lorem ipsum d
+olor sit amet |  olor sit amet |  olor sit amet
+              |  lorem ipsum d |  lorem.
+              |  olor sit amet |
+              |  lorem ipsum d |
+              |  olor sit.     |
+.----.        |  .----.        |  .----.
+|Like|        |  |Like|        |  |Like|
+'----'        |  '----'        |  '----'
+
+<style type="text/css">
+  .col {
+    width: 140px;
+    float: left;
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-right: 1px solid black;
+  }
+  .col:last-child {
+    border-right: 0;
+  }
+  .col button {
+    position: absolute;
+    bottom: 5px;
+  }
+</style>
+
+<div>
+  <div class="col">
+    <img src="" alt="image" />
+    <p>lorem ipsum</p>
+    <button>Like</button>
+  </div>
+  <div class="col">
+    <img src="" alt="image" />
+    <p></p>
+    <button>Like</button>
+  </div>
+  <div class="col">
+    <img src="" alt="image" />
+    <p></p>
+    <button>Like</button>
+  </div>
+</div>
