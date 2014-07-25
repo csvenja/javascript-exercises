@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<title></title>
+</head>
+<script type="text/javascript">
+	var intervalId;
+
+	function countDownDate() {
+		intervalId = setInterval(updateDate, 100);
+	}
+
+	function updateDate() {
+		var yearNode = document.getElementById('year'),
+			dayNode = document.getElementById('day'),
+			hourNode = document.getElementById('hour'),
+			minuteNode = document.getElementById('minute'),
+			secondNode = document.getElementById('second'),
+			date = new Date(),
+			year = date.getFullYear(),
+			day,
+			hour,
+			minute,
+			second,
+			newYearTime = new Date(year, 6, 20, 3, 0).getTime(),
+			timeRemain = Math.floor((newYearTime - date.getTime()) / 1000);
+
+		second = timeRemain % 60;
+		timeRemain = Math.floor(timeRemain / 60);
+		minute = timeRemain % 60;
+		timeRemain = Math.floor(timeRemain / 60);
+		hour = timeRemain % 24;
+		timeRemain = Math.floor(timeRemain / 24);
+		day = timeRemain;
+
+		yearNode.innerText = year;
+		dayNode.innerText = day;
+		hourNode.innerText = hour;
+		minuteNode.innerText = minute;
+		secondNode.innerText = second;
+	}
+
+	function stopCountDownDate() {
+		clearInterval(intervalId);
+	}
+</script>
+<body onload="countDownDate();">
+<p>
+	<span id="year"></span> 年还剩
+	<span id="day"></span> 天
+	<span id="hour"></span> 时
+	<span id="minute"></span> 分
+	<span id="second"></span> 秒
+</p>
+<button onclick="stopCountDownDate();">stop</button>
+</body>
+</html>
