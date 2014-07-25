@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<title></title>
+</head>
+<script type="text/javascript">
+	var intervalId,
+		count = 0;
+
+	function startCount() {
+		intervalId = setInterval(updateCount, 10);
+	}
+
+	function updateCount() {
+		var counter = document.getElementById('counter'),
+			countString,
+			n,
+			i;
+
+		if (counter.innerText !== '') {
+			count += 1;
+		}
+
+		countString = count.toString(16).toUpperCase();
+		n = countString.length;
+
+		if (n < 8) {
+			for (i = n; i <= 8; i++) {
+				countString = '0' + countString;
+			}
+		}
+
+		counter.innerText = countString;
+	}
+
+	function stopCount() {
+		clearInterval(intervalId);
+	}
+</script>
+<body onload="startCount();">
+<p id="counter"></p>
+<button onclick="stopCount();">stop</button>
+</body>
+</html>
