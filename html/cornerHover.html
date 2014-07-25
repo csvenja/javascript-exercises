@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="profile">
+	    <img class="mainImage" src="xxx.jpg" alt="Profile Image" />
+	    <img class="cornerImage" src="yyy.jpg" alt="Change Avatar" />
+	</div>
+	<style type="text/css">
+		.profile {
+			position: relative;
+			width: 400px;
+			height: 400px;
+		}
+
+		.mainImage {
+			width: 400px;
+			height: 400px;
+		}
+
+		.cornerImage {
+			display: none;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+
+	    .profile:hover .cornerImage {
+	        display: block;
+	    }
+	</style>
+</body>
+</html>
