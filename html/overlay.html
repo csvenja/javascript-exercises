@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="overlay();">overlay</button>
+<script type="text/javascript">
+	function overlay() {
+		var overlayNode = document.getElementById('overlay'),
+			body = document.getElementsByTagName('body')[0];
+
+		if (!overlayNode) {
+			overlayNode = document.createElement('div');
+			overlayNode.innerText = "meowmeowmeow";
+			overlayNode.style.zIndex = "2";
+			overlayNode.style.background = "white";
+			overlayNode.style.opacity = 0.5;
+			overlayNode.style.filter = "alpha(opacity=50)";
+			overlayNode.style.width = "200px";
+			overlayNode.style.height = "200px";
+			overlayNode.style.top = "0";
+			overlayNode.style.left = "0";
+			overlayNode.style.margin = "10px";
+			overlayNode.style.border = "2px solid #0000A0";
+			overlayNode.style.position = "fixed";
+
+			overlayNode.onclick = function () {
+				this.style.display = "none";
+			};
+		}
+
+		overlayNode.style.display = "block";
+
+		body.appendChild(overlayNode);
+	}
+</script>
+</body>
+</html>
