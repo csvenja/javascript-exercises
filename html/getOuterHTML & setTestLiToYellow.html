@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="a"><span>span</span>div</div>
+	<span>div</span>
+	<p>p</p>
+	<ul>
+	    <li class="test">test li</li>
+	    <li>not test</li>
+	</ul>
+	<p class="test">test p</p>
+	<button onclick="setTestLiToYellow()">meow</button>
+<script type="text/javascript">
+	function getOuterHTML(id) {
+		var originElem = document.getElementById(id),
+			elem = originElem.cloneNode(true),
+			newElem = document.createElement("div");
+			parent = elem.parentNode;
+			newElem.appendChild(elem);
+			outerHTML = newElem.innerHTML;
+
+			console.log(originElem.parentNode);
+		return outerHTML;
+	}
+</script>
+</body>
+</html>
