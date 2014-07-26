@@ -25,6 +25,17 @@
 			console.log(originElem.parentNode);
 		return outerHTML;
 	}
+
+	function setTestLiToYellow() {
+	    var elements = document.querySelectorAll("li.test"),
+	        n = elements.length,
+	        i;
+
+	    for (i = 0; i < n; i++) {
+	    	console.log(elements[i]);
+	        elements[i].style.backgroundColor = "yellow";
+	    }
+	}
 </script>
 </body>
 </html>
